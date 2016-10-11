@@ -1,3 +1,0 @@
-function View() {
-    "use strict";
-}
