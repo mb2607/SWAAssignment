@@ -2,7 +2,6 @@ function View() {
     "use strict";
     
     var table = document.getElementById('fruitsTable');
- 
     var updateFullTable = function(){
          var fruits = controller.show();
         
