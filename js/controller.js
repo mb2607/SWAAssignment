@@ -4,8 +4,8 @@ function Controller(view, model) {
         return model.show();
     }
     
-    this.add = function(input){
-        model.add(input);
+    this.add = function(fruit, price, origin){
+        model.add(fruit, price, origin);
     }
     
     this.deleteByName = function(input){

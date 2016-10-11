@@ -9,29 +9,33 @@ function View() {
         
         for(var i=0; i < fruits.length; i++){
             var tr = table.appendChild(document.createElement('tr'));
-            var td = tr.appendChild(document.createElement('td'));
-            td.appendChild(document.createTextNode(fruits[i]));
-            tr.appendChild(td);
+            for(var j = 0; j < fruits[i].length; j++) {
+                var td = tr.appendChild(document.createElement('td'));
+                td.appendChild(document.createTextNode(fruits[i][j]));
+                tr.appendChild(td);
+            }
             table.appendChild(tr);
         } 
     }
     
     var addNodeToTable = function(){
         var textInput = document.getElementById('textInput').value;
+        var priceInput = document.getElementById('priceInput').value;
+        var originInput = document.getElementById('originInput').value;
         var oldLength = controller.show().length;
                 
-        controller.add(textInput);
+        controller.add(textInput, priceInput, originInput);
                 
         var newLength = controller.show().length;
-        alert('old = '+ oldLength + ' new = ' + newLength);
-            
         var fruits = controller.show();
         //compare old table length to new table length, if different, add node
         for(var i=oldLength; i < newLength; i++){
             var tr = table.appendChild(document.createElement('tr'));
-            var td = tr.appendChild(document.createElement('td'));
-            td.appendChild(document.createTextNode(fruits[i]));
-            tr.appendChild(td);
+            for(var j= 0; j < fruits[i].length; j++) {
+                var td = tr.appendChild(document.createElement('td'));
+                td.appendChild(document.createTextNode(fruits[i][j]));
+                tr.appendChild(td);
+            }
             table.appendChild(tr);
         }     
     }
