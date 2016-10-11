@@ -11,4 +11,8 @@ function Controller(view, model) {
     this.deleteByName = function(input){
         model.deleteByName(input);
     }
+    
+    this.edit = function(input1, input2){
+        model.edit(input1, input2);
+    }
 }
