@@ -6,7 +6,7 @@ function Model() {
     
     this.add = function(fruit)
     {
-     fruits.push(fruit);   
+            fruits.push(fruit);        
     }
     
     this.deleteByName = function(fruit)
@@ -14,7 +14,6 @@ function Model() {
                 
         fruits.splice(fruits.indexOf(fruit), 1);
     }
-    
     
     this.edit = function(oldFruit, newFruit)
     {
