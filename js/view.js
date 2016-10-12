@@ -44,6 +44,12 @@ function View() {
         updateFullTable();
     }
     
+    buttonSearch.onclick = function() {
+        var item = document.getElementById('search').value;
+        controller.search(item);
+        updateFullTable();
+    }
+    
     buttonAdd.onclick=function(){
         
         addNodeToTable();

@@ -15,4 +15,8 @@ function Controller(view, model) {
     this.edit = function(input1, input2){
         model.edit(input1, input2);
     }
+    
+    this.search = function(item) {
+        model.search(item);
+    }
 }

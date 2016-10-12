@@ -37,5 +37,19 @@ function Model() {
     {
         return fruits;
     }
+    
+    this.search = function(item) {
+        var temp = [[]];
+        var counter = 0;
+        fruits.forEach(function(array) {
+           array.forEach(function(member) {
+             if(item === member) {
+                 temp = [['Fruit', 'Price', 'Origin'],
+                          [array[counter++], array[counter++], array[counter++]]];      
+             }  
+           }); 
+        });
+        fruits = temp;
+    }
 
 }
