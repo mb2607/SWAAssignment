@@ -82,10 +82,11 @@ function View() {
     
     buttonEditSearch.onclick = function() {
         var textInput = document.getElementById('editSearchInput').value;
+        console.log(textInput);
         var inputs = [];
         inputs = controller.searchToEdit(textInput);
         
-        if(inputs != undefined || inputs.length !== 0){
+        if(inputs[0] != undefined || inputs.length !== 0 && textInput != undefined){
             document.getElementById('editNameInput').value = inputs[0];
             document.getElementById('editPriceInput').value = inputs[1];
             document.getElementById('editOriginInput').value = inputs[2];
@@ -97,9 +98,17 @@ function View() {
         var fruitName = document.getElementById('editNameInput').value;
         var price = document.getElementById('editPriceInput').value;            var origin = document.getElementById('editOriginInput').value;
         
-        controller.deleteByName(fruitTodelete);
-        controller.add(fruitName, price, origin);
+        if(fruitName != "" && price != "" && origin != "") {
+            if(fruitName != undefined && price != undefined && origin != undefined)
+                   controller.deleteByName(fruitTodelete);
+        controller.add(fruitName, price, origin); 
+        }
+
         updateFullTable();
+    }
+    
+    this.validateInput = function(){
+        
     }
       
   }
