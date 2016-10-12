@@ -24,7 +24,7 @@ function Model() {
     
     this.deleteByName = function(fruit)
     {
-        if(fruits.length>2){
+        if(fruits.length != 1){
             fruits.forEach(function(array){
             array.forEach(function(member) {
                 if(fruit === member) {
