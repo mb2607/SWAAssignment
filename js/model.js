@@ -24,8 +24,16 @@ function Model() {
     
     this.deleteByName = function(fruit)
     {
-        if(fruits.length>2)
-            fruits.splice(fruits.indexOf(fruit), 1);
+        if(fruits.length>2){
+            fruits.forEach(function(array){
+            array.forEach(function(member) {
+                if(fruit === member) {
+                    fruits.splice(fruits.indexOf(array),1);
+                } 
+                });
+            }); 
+        }        
+
     }
     
     this.edit = function(oldFruit, newFruit)
@@ -57,7 +65,8 @@ function Model() {
     }
     
     this.clearSearch = function() {
-        fruits = this.storeFruits;
+        if(this.storeFruits != undefined)
+            fruits = this.storeFruits;
     }
 
 }
