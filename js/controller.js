@@ -19,4 +19,8 @@ function Controller(view, model) {
     this.search = function(item) {
         model.search(item);
     }
+    
+    this.clearSearch = function(){
+        model.clearSearch();
+    }
 }

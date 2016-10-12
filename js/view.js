@@ -2,9 +2,10 @@ function View() {
     "use strict";
     
     var table = document.getElementById('fruitsTable');
+    
     var updateFullTable = function(){
          var fruits = controller.show();
-        
+
         $("#fruitsTable tr").remove();
         
         for(var i=0; i < fruits.length; i++){
@@ -50,20 +51,21 @@ function View() {
         updateFullTable();
     }
     
+    buttonClearSearch.onclick = function() {
+        controller.clearSearch();
+        updateFullTable();
+        $('#search input').text = "";
+    }
+    
     buttonAdd.onclick=function(){
         
         addNodeToTable();
     }
         
     buttonDelete.onclick=function(){
-        var textInput = document.getElementById('textInput').value;
-        var oldLength = controller.show().length;
-
-        controller.deleteByName(textInput);
-
-        var newLength = controller.show().length;
-        alert('old = '+ oldLength + ' new = ' + newLength);
-
+        var textInput = document.getElementById('textDelete').value;
+        if(textInput != '')
+            controller.deleteByName(textInput);
         updateFullTable(); 
     }
         

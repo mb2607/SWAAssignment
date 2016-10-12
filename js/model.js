@@ -1,6 +1,7 @@
 function Model() {
     "use strict";
-
+    
+    var storeFruits;
     var fruits = [
         ["Fruit", "Price", "Origin"],
         ["Banana", 10, "New York"],    
@@ -10,8 +11,6 @@ function Model() {
         ["Pineapple", 25, "London"],    
         ["Grape", 36, "Rome"]  
     ];
-    
-    
     
     
     this.add = function(fruit, price, origin)
@@ -25,7 +24,8 @@ function Model() {
     
     this.deleteByName = function(fruit)
     {
-        fruits.splice(fruits.indexOf(fruit), 1);
+        if(fruits.length>2)
+            fruits.splice(fruits.indexOf(fruit), 1);
     }
     
     this.edit = function(oldFruit, newFruit)
@@ -39,17 +39,25 @@ function Model() {
     }
     
     this.search = function(item) {
-        var temp = [[]];
-        var counter = 0;
+        var temp = [["Fruit","Price", "Origin"]];
+        this.storeFruits = fruits;
+        var foundItem = false;
         fruits.forEach(function(array) {
            array.forEach(function(member) {
              if(item === member) {
-                 temp = [['Fruit', 'Price', 'Origin'],
-                          [array[counter++], array[counter++], array[counter++]]];      
+                foundItem = true;
+                temp.push(array);
              }  
            }); 
         });
         fruits = temp;
+
+        if(!foundItem)
+            fruits = this.storeFruits;
+    }
+    
+    this.clearSearch = function() {
+        fruits = this.storeFruits;
     }
 
 }
