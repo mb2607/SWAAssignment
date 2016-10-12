@@ -36,8 +36,11 @@ function Model() {
 
     }
     
-    this.edit = function(oldFruit, newFruit)
+    this.edit = function(fruit, price, origin)
     {
+        if(fruit != undefined || price != undefined || origin != undefined) {
+            
+        }
         fruits[fruits.indexOf(oldFruit)] = newFruit;
     }
     
@@ -67,6 +70,20 @@ function Model() {
     this.clearSearch = function() {
         if(this.storeFruits != undefined)
             fruits = this.storeFruits;
+    }
+    
+    this.searchToEdit = function(item) {
+        var temp = [];
+        fruits.forEach(function(array){
+           array.forEach(function(member){
+               if(item === member) {
+                temp.push(array[0]);
+                temp.push(array[1]);
+                temp.push(array[2]);
+               }
+           }); 
+        });
+        return temp;
     }
 
 }

@@ -54,7 +54,6 @@ function View() {
     buttonClearSearch.onclick = function() {
         controller.clearSearch();
         updateFullTable();
-        $('#search input').text = "";
     }
     
     buttonAdd.onclick=function(){
@@ -80,4 +79,28 @@ function View() {
 
         updateFullTable(); 
     }
-}
+    
+    buttonEditSearch.onclick = function() {
+        var textInput = document.getElementById('editSearchInput').value;
+        var inputs = [];
+        inputs = controller.searchToEdit(textInput);
+        
+        if(inputs != undefined || inputs.length !== 0){
+            document.getElementById('editNameInput').value = inputs[0];
+            document.getElementById('editPriceInput').value = inputs[1];
+            document.getElementById('editOriginInput').value = inputs[2];
+            }
+    }
+    
+    buttonEdit.onclick = function(){
+        var fruitTodelete = document.getElementById('editSearchInput').value;
+        var fruitName = document.getElementById('editNameInput').value;
+        var price = document.getElementById('editPriceInput').value;            var origin = document.getElementById('editOriginInput').value;
+        
+        controller.deleteByName(fruitTodelete);
+        controller.add(fruitName, price, origin);
+        updateFullTable();
+    }
+      
+  }
+

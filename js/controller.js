@@ -23,4 +23,8 @@ function Controller(view, model) {
     this.clearSearch = function(){
         model.clearSearch();
     }
+    
+    this.searchToEdit = function(item) {
+        return model.searchToEdit(item);
+    }
 }
