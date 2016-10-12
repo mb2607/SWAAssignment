@@ -9,14 +9,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -28,13 +21,45 @@
        
     </head>
     <body>
-     
-        <input type="text" id="textInput" value="fruit" required>
-        <button id="buttonAdd">Add</button>
-        <button id="buttonDelete">Delete</button>
-        <input type="text" id="editInput" value="edited fruit">
-        <button id="buttonEdit">edit selected fruit</button>
-        <table id="fruitsTable"></table>
+        <div class="greating">
+            <h1>Welcome to your fruit store</h1>
+        </div>
+        <div>
+            <div class="search">
+                <h3>Search for your favorite fruit</h3>
+                <input type="text" id="search">
+                <button id="buttonSearch">Search</button> 
+            </div>
+            <div class="addDelete">
+                <h3>Add your fruit</h3>
+                <div>
+                    Fruit Name<input type="text" id="textInput" required>
+                </div>
+                <div>
+                    Fruit price<input type="number" id="priceInput">
+                    <button id="buttonAdd">Add</button>
+                </div>
+                <div>
+                    Fruit Origin<input type="text" id="originInput">
+                </div>
+                                            
+            </div>
+            <div>
+                <h3>Enter fruit name to delete</h3>
+                <input type="text" id="textDelete">
+                <button id="buttonDelete">Delete</button>
+            </div>
+            <div class="edit">
+                <h3>Change a fruit in your collection</h3>
+                <input type="text" id="editInput" value="edited fruit">
+                <button id="buttonEdit">edit selected fruit</button>
+            </div>
+            <div class="fruits">
+                <h3>Your fruits</h3>
+                <table id="fruitsTable"></table>
+            </div>
+        </div>
+        
         
         
         
