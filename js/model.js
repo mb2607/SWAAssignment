@@ -1,6 +1,7 @@
 function Model() {
     "use strict";
-
+    
+    var storeFruits;
     var fruits = [
         ["Fruit", "Price", "Origin"],
         ["Banana", 10, "New York"],    
@@ -10,8 +11,6 @@ function Model() {
         ["Pineapple", 25, "London"],    
         ["Grape", 36, "Rome"]  
     ];
-    
-    
     
     
     this.add = function(fruit, price, origin)
@@ -25,17 +24,66 @@ function Model() {
     
     this.deleteByName = function(fruit)
     {
-        fruits.splice(fruits.indexOf(fruit), 1);
+        if(fruits.length != 1){
+            fruits.forEach(function(array){
+            array.forEach(function(member) {
+                if(fruit === member) {
+                    fruits.splice(fruits.indexOf(array),1);
+                } 
+                });
+            }); 
+        }        
+
     }
     
-    this.edit = function(oldFruit, newFruit)
+    this.edit = function(fruit, price, origin)
     {
+        if(fruit != undefined || price != undefined || origin != undefined) {
+            
+        }
         fruits[fruits.indexOf(oldFruit)] = newFruit;
     }
     
     this.show = function()
     {
         return fruits;
+    }
+    
+    this.search = function(item) {
+        var temp = [["Fruit","Price", "Origin"]];
+        this.storeFruits = fruits;
+        var foundItem = false;
+        fruits.forEach(function(array) {
+           array.forEach(function(member) {
+             if(item === member) {
+                foundItem = true;
+                temp.push(array);
+             }  
+           }); 
+        });
+        fruits = temp;
+
+        if(!foundItem)
+            fruits = this.storeFruits;
+    }
+    
+    this.clearSearch = function() {
+        if(this.storeFruits != undefined)
+            fruits = this.storeFruits;
+    }
+    
+    this.searchToEdit = function(item) {
+        var temp = [];
+        fruits.forEach(function(array){
+           array.forEach(function(member){
+               if(item === member) {
+                temp.push(array[0]);
+                temp.push(array[1]);
+                temp.push(array[2]);
+               }
+           }); 
+        });
+        return temp;
     }
 
 }

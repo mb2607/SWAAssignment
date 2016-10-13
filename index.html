@@ -28,7 +28,8 @@
             <div class="search">
                 <h3>Search for your favorite fruit</h3>
                 <input type="text" id="search">
-                <button id="buttonSearch">Search</button> 
+                <button id="buttonSearch">Search</button>
+                <button id="buttonClearSearch">Clear Search</button>
             </div>
             <div class="addDelete">
                 <h3>Add your fruit</h3>
@@ -50,8 +51,14 @@
                 <button id="buttonDelete">Delete</button>
             </div>
             <div class="edit">
-                <h3>Change a fruit in your collection</h3>
-                <input type="text" id="editInput" value="edited fruit">
+                <h3>Change a fruit in your collection, search for a fruit then change the values</h3>
+                <div class="edit">
+                    <input type="text" id="editSearchInput">
+                    <button id="buttonEditSearch">Search</button>
+                </div>
+                <input type="text" id="editNameInput">
+                <input type="text" id="editPriceInput">
+                <input type="text" id="editOriginInput">
                 <button id="buttonEdit">edit selected fruit</button>
             </div>
             <div class="fruits">
@@ -59,12 +66,6 @@
                 <table id="fruitsTable"></table>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
