@@ -3,7 +3,7 @@ function View() {
     
     var table = document.getElementById('fruitsTable');
     
-    var updateFullTable = function(){
+    this.updateFullTable = function(){
          var fruits = controller.show();
 
         $("#fruitsTable tr").remove();
@@ -41,19 +41,15 @@ function View() {
         }     
     }
     
-    this.fillTable = function(controller){
-        updateFullTable();
-    }
-    
     buttonSearch.onclick = function() {
         var item = document.getElementById('search').value;
         controller.search(item);
-        updateFullTable();
+        view.updateFullTable();
     }
     
     buttonClearSearch.onclick = function() {
         controller.clearSearch();
-        updateFullTable();
+        view.updateFullTable();
     }
     
     buttonAdd.onclick=function(){
@@ -65,7 +61,7 @@ function View() {
         var textInput = document.getElementById('textDelete').value;
         if(textInput != '')
             controller.deleteByName(textInput);
-        updateFullTable(); 
+        view.updateFullTable(); 
     }
         
     buttonEdit.onclick=function(){
@@ -77,7 +73,7 @@ function View() {
 
         var fruits = controller.show();
 
-        updateFullTable(); 
+        view.updateFullTable(); 
     }
     
     buttonEditSearch.onclick = function() {
@@ -104,12 +100,8 @@ function View() {
         controller.add(fruitName, price, origin); 
         }
 
-        updateFullTable();
+        view.updateFullTable();
     }
     
-    this.validateInput = function(){
-        
-    }
-      
   }
 
