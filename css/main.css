@@ -1,8 +1,46 @@
+body {
+    margin-left: 10px
+}
+.greating {
+    margin: 10px
+}
+.search {
+    margin: 10px
+}
+
+.addDelete input {
+    margin: 10px
+}
+
+.addDelete button {
+    margin: 10px;
+}
+
+.edit {
+    margin: 10px
+}
+
+.fruits {
+    margin: 10px;
+    max-height: 300px;
+    max-width: 400px
+}
+
+.fruits td {
+    border: 2px solid gray;
+    font-size: 20px;
+    height: 50%;
+    width: 50%;
+}
+
+.edit {
+    margin: 10px
+}
 
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+
+
+
 
 
 
