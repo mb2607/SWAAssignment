@@ -7,7 +7,7 @@ function View() {
          var fruits = controller.show();
 
         $("#fruitsTable tr").remove();
-        
+
         for(var i=0; i < fruits.length; i++){
             var tr = table.appendChild(document.createElement('tr'));
             for(var j = 0; j < fruits[i].length; j++) {
@@ -106,6 +106,45 @@ function View() {
 
         updateFullTable();
     }
+    
+    buttonGraph.onclick = function(){
+        var fruits = controller.show()
+        var results = [];
+        var tempGraph;
+                for(var i=0; i < fruits.length; i++){
+               tempGraph = {name: fruits[i][0], count: fruits[i][1], color: getRandomColor()};
+                results.push(tempGraph);
+                    
+
+        }
+          var cx = document.querySelector("canvas").getContext("2d");
+  var total = results.reduce(function(sum, choice) {
+    return sum + choice.count;
+  }, 0);
+  // Start at the top
+  var currentAngle = -0.5 * Math.PI;
+  results.forEach(function(result) {
+    var sliceAngle = (result.count / total) * 2 * Math.PI;
+    cx.beginPath();
+    // center=100,100, radius=100
+    // from current angle, clockwise by slice's angle
+    cx.arc(100, 100, 100,
+           currentAngle, currentAngle + sliceAngle);
+    currentAngle += sliceAngle;
+    cx.lineTo(100, 100);
+    cx.fillStyle = result.color;
+    cx.fill();
+  });
+    }
+        
+        function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
     
     this.validateInput = function(){
         
