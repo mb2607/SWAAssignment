@@ -3,18 +3,28 @@ function Model() {
     
     var storeFruits;
     var fruits = [
-        ["Fruit", "Price", "Origin"],
         ["Banana", 10, "New York"],    
         ["Apple", 15, "London"],     
         ["Orange", 16, "Rome"],     
         ["Lemon", 40, "New York"],     
-        ["Pineapple", 25, "London"],    
+        ["Pineapple", 25, "London"],
         ["Grape", 36, "Rome"]  
     ];
     
     
     this.add = function(fruit, price, origin)
     {
+         if (!isNaN(fruit) || !isNaN(origin) || isNaN(price) ) 
+             {
+                if (!isNaN(fruit))
+                    {return alert('The name must be a string')}
+                    if (isNaN(price))
+                    {return alert('The price must be a number')}
+                      if (isNaN(origin))
+                    {return alert('The origin must be a string')}
+                 
+             }
+             
         var valueToPush = new Array();
         valueToPush[0] = fruit;
         valueToPush[1] = price;

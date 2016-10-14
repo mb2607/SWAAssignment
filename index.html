@@ -62,10 +62,13 @@
                 <input type="text" id="editOriginInput">
                 <button id="buttonEdit">edit selected fruit</button>
             </div>
-            <div class="fruits">
-                <h3>Your fruits</h3>
-                <table id="fruitsTable"></table>
+                  <h3>Your fruits</h3><button id="buttonGraph">Draw/refresh graph</button>
+            <div style="float:Left;" class="fruits">
+          
+                <table id="fruitsTable">
+                </table>
             </div>
+             <div style="float:left;"><canvas width="200" height="200"></canvas></div>
         </div>
          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
