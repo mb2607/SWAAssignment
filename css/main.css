@@ -1,9 +1,11 @@
 body {
     margin-left: 10px
 }
+
 .greating {
     margin: 10px
 }
+
 .search {
     margin: 10px
 }
@@ -23,7 +25,7 @@ body {
 .fruits {
     margin: 10px;
     max-height: 300px;
-    max-width: 400px
+    max-width: 400px;
 }
 
 .fruits td {
@@ -37,24 +39,7 @@ body {
     margin: 10px
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#deleteResults {
+    margin-left: 10px;
+    font-style: color: 'blue';
+}

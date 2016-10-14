@@ -1,30 +1,24 @@
 function Controller(view, model) {
     "use strict";
-    this.show = function(){
+    this.show = function () {
         return model.show();
     }
-    
-    this.add = function(fruit, price, origin){
+    this.add = function (fruit, price, origin) {
         model.add(fruit, price, origin);
     }
-    
-    this.deleteByName = function(input){
-        model.deleteByName(input);
+    this.deleteByName = function (input) {
+        return model.deleteByName(input);
     }
-    
-    this.edit = function(input1, input2){
+    this.edit = function (input1, input2) {
         model.edit(input1, input2);
     }
-    
-    this.search = function(item) {
+    this.search = function (item) {
         model.search(item);
     }
-    
-    this.clearSearch = function(){
+    this.clearSearch = function () {
         model.clearSearch();
     }
-    
-    this.searchToEdit = function(item) {
+    this.searchToEdit = function (item) {
         return model.searchToEdit(item);
     }
 }

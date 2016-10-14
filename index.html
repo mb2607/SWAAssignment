@@ -2,79 +2,85 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        
-        <script src="js/model.js"></script>
-         <script src="js/view.js"></script>
-        <script src="js/controller.js"></script>
-       
-    </head>
-    <body>
-        <div class="greating">
-            <h1>Welcome to your fruit store</h1>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body>
+    <div class="greating">
+        <h3>Welcome to your fruit store</h3> </div>
+    <div>
+        <div class="search">
+            <h4>Search for your favorite fruit</h4>
+            <input type="text" id="search">
+            <button id="buttonSearch">Search</button>
+            <button id="buttonClearSearch">Clear Search</button>
         </div>
-        <div>
-            <div class="search">
-                <h3>Search for your favorite fruit</h3>
-                <input type="text" id="search">
-                <button id="buttonSearch">Search</button>
-                <button id="buttonClearSearch">Clear Search</button>
+        <div class="addDelete">
+            <h4>Add your fruit</h4>
+            <div> Fruit Name
+                <input type="text" id="textInput" required> </div>
+            <div> Fruit price
+                <input type="number" id="priceInput">
+                <button id="buttonAdd">Add</button>
             </div>
-            <div class="addDelete">
-                <h3>Add your fruit</h3>
-                <div>
-                    Fruit Name<input type="text" id="textInput" required>
-                </div>
-                <div>
-                    Fruit price<input type="number" id="priceInput">
-                    <button id="buttonAdd">Add</button>
-                </div>
-                <div>
-                    Fruit Origin<input type="text" id="originInput">
-                </div>
-                                            
-            </div>
-            <div>
-                <h3>Enter fruit name to delete</h3>
-                <input type="text" id="textDelete">
-                <button id="buttonDelete">Delete</button>
-            </div>
+            <div> Fruit Origin
+                <input type="text" id="originInput"> </div>
+        </div>
+        <div id="deleteSection">
+            <h4>Enter fruit name to delete</h4>
+            <input type="text" id="textDelete">
+            <button id="buttonDelete">Delete</button> <span id="deleteResults"></span> </div>
+        <div class="edit">
+            <h4>Search for a fruit then change the values</h4>
             <div class="edit">
-                <h3>Change a fruit in your collection, search for a fruit then change the values</h3>
-                <div class="edit">
-                    <input type="text" id="editSearchInput">
-                    <button id="buttonEditSearch">Search</button>
-                </div>
-                <input type="text" id="editNameInput">
-                <input type="text" id="editPriceInput">
-                <input type="text" id="editOriginInput">
-                <button id="buttonEdit">edit selected fruit</button>
+                <input type="text" id="editSearchInput">
+                <button id="buttonEditSearch">Search</button>
             </div>
-                  <h3>Your fruits</h3><button id="buttonGraph">Draw/refresh graph</button>
-            <div style="float:Left;" class="fruits">
-          
-                <table id="fruitsTable">
-                </table>
-            </div>
-             <div style="float:left;"><canvas width="200" height="200"></canvas></div>
+            <input type="text" id="editNameInput">
+            <input type="text" id="editPriceInput">
+            <input type="text" id="editOriginInput">
+            <button id="buttonEdit">edit selected fruit</button>
         </div>
-         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <table width=100% height=100%>
+            <tr>
+                <td width=50%>
+                    <div class="fruits">
+                        <h4>Your fruit table</h4>
+                        <table id="fruitsTable"> </table>
+                    </div>
+                </td>
+                <td width=50%>
+                    <div>
+                        <h4>A pie chart that shows the fruit prices</h4>
+                        <canvas width="200" height="200"></canvas>
+                        <button id="buttonChangeColors">Change pie chart colors</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
-        
-    </body>
 </html>
